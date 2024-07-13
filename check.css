@@ -1,0 +1,63 @@
+/* Basic reset to ensure consistent styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Space between images */
+    max-width: 1200px; /* Adjust as needed */
+    margin: 20px;
+  }
+  
+  .gallery img {
+    width: 100%; /* Make images responsive */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Crop images to fit within the set dimensions */
+    cursor: pointer; /* Indicate that images are clickable */
+    transition: transform 0.1s; /* Smooth transition for hover effect */
+  }
+  .gallery img:hover{
+     transform: scale(0.8) rotate(-15deg); 
+    border-radius: 20px;
+    box-shadow: 0 32px 7px rgba(68,77, 136, 0.2);
+    
+      }
+  
+  .full-img {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 1000;
+  }
+  
+  .full-img img {
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .full-img.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
